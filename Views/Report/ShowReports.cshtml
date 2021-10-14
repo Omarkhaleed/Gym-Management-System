@@ -1,0 +1,80 @@
+﻿@model  IEnumerable<Report>
+@{
+    ViewBag.Title = "Show_All_Reports";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (ViewBag.manager == "5")
+{
+
+    if (Model.Count() == 0)
+    {
+        <div class=" danger alert alert-danger col-md-4" role="alert">
+            <h5>Sorry There Is No <strong>Reports</strong></h5>
+        </div>
+    }
+    else
+    {
+
+        <div class="table-responsive">
+            <table class=" mainTable  text-center  table-striped  table-dark table table-bordered">
+                @*<table class="table table-hover table-striped table-bordered">*@
+                <tr>
+                <thead>
+                <th>#@Html.DisplayNameFor(pp => pp.ReportId)</th>
+                <th>@Html.DisplayNameFor(pp => pp.DateOfStarting)</th>
+                <th>@Html.DisplayNameFor(pp => pp.DateOfEnding)</th>
+                <th>@Html.DisplayNameFor(pp => pp.Coach.FirstName)</th>
+                <th>@Html.DisplayNameFor(pp => pp.Sport.SportName)</th>
+                <th>@Html.DisplayNameFor(pp => pp.Num_Of_Trainees)</th>
+                <th>@Html.DisplayNameFor(pp => pp.Price)</th>
+                <th>@Html.DisplayNameFor(pp => pp.TotalPrice)</th>
+                <th>@Html.DisplayNameFor(pp => pp.Admin.FirstName)</th>
+                <th>Mange</th>
+                </thead>
+                </tr>
+                @foreach (var report in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(pp => report.ReportId)</td>
+                        <td>@Html.DisplayFor(pp => report.DateOfStarting)</td>
+                        <td>@Html.DisplayFor(pp => report.DateOfEnding)</td>
+                        <td>@Html.DisplayFor(pp => report.Coach.FirstName)</td>
+                        <td>@Html.DisplayFor(pp => report.Sport.SportName)</td>
+                        <td>@Html.DisplayFor(pp => report.Num_Of_Trainees)</td>
+                        <td>@Html.DisplayFor(pp => report.Price)</td>
+                        <td>@Html.DisplayFor(pp => report.TotalPrice)</td>
+                        <td>@Html.DisplayFor(pp => report.Admin.FirstName)</td>
+
+                        <td>
+                            <a href="@Url.Action("PrintReport", "Report", new { id = report.ReportId })" class="btn btn-info"><i class="fas fa-print"></i> Print</a>
+                            <a href="@Url.Action("EditReport", "Report", new { id = report.ReportId })" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="@Url.Action("DeleteReport", "Report", new { id = report.ReportId })" onclick="return confirm('Are You Sure To Delete This Report ?')" }) class="btn btn-danger"><i class="fas fa-times"></i> Delete</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    }
+        }
+
+        else
+        {
+<div class=" danger alert alert-danger col-md-4" role="alert">
+    <h5>Sorry, only manger can see this !</h5>
+</div>
+}
+
+@*<button style="border-radius: 9px;
+            width: 125px;
+            margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: -51px;
+        " ;
+            class=" btn btn-outline-primary submit form-group" onclick="window.print()">
+        Print
+    </button>*@

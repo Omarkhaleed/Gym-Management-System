@@ -1,0 +1,200 @@
+﻿@model Admin
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> Welcome In <span style="color: #870000;"><i>PRO</i></span> Gym</h2>
+<br />
+
+<form class="form" action="~/Trainee/FindTrainees" method="get">
+    <input class="  form-control my-2 my-sm-0" type="search" name="Id" placeholder="ID...." />
+    <input class="submit  btn btn-outline-info" type="submit" value="Search">
+</form>
+<form class="form" action="~/Trainee/FindTrainees2" method="put">
+    <input class="  form-control my-2 my-sm-0" type="search" name="phone" placeholder="phone...." />
+    <input class="submit  btn btn-outline-info" type="submit" value="Search">
+</form>
+
+
+@*<div class="row">
+    <div class="col-md-3">
+        <form class=" form " action="~/Trainee/FindTrainees" method="get">
+            <input class="form-control my-2 my-sm-0" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        </div>
+    </div>*@
+
+<div class="row">
+    <div class="col-md-3">
+        <div class=" svg-show card card-new" style="width: 18rem;">
+            <a href="~/Trainee/ShowTrainees">
+                <div class="card-body">
+                    <h5 class="card-title">Total Trainees</h5>
+                    <i class="fa fa-users"></i>
+                    <span class="card-text">@ViewBag.AllTrainees</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class=" svg-show card card-new" style="width: 18rem;">
+            <a href="~/Trainee/Show_Boxing_Trainees">
+                <div class="card-body">
+                    <h5 class="card-title">Boxing Trainees</h5>
+                    <i class="fa fa-users"></i>
+                    <span class="card-text">@ViewBag.BoxingTrainees</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class=" svg-show card card-new" style="width: 18rem;">
+            <a href="~/Trainee/Show_Crossfit_Trainees">
+                <div class="card-body">
+                    <h5 class="card-title">Crossfit Trainees</h5>
+                    <i class="fa fa-users"></i>
+                    <span class="card-text">@ViewBag.CrossfitTrainees</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class=" svg-show card card-new" style="width: 18rem;">
+            <a href="~/Trainee/Show_Gym_Trainees">
+                <div class="card-body">
+                    <h5 class="card-title">Gym Trainees</h5>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <span class="card-text">@ViewBag.GymTrainees</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row Add">
+    <div class="col-md-3">
+        <div class="card card-new" style="width: 18rem;">
+            <div class="card-body">
+
+                <a href="~/Sport/AddSport">
+                    <h5 class="one">Add Sport</h5>
+                    <i class="fas fa-dumbbell"></i>
+                </a>
+                <a href="~/Sport/ShowSport">
+                    <h5 class="two">Show Sports</h5>
+                </a>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-new" style="width: 18rem;">
+            <div class="card-body">
+
+                <a href="~/Plan/AddPlan">
+                    <h5 class="one">Add Plan</h5>
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="~/Plan/ShowPlan">
+                    <h5 class="two">Show Plans</h5>
+                </a>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class=" col-md-3">
+        <div class="card card-new" style="width: 18rem;">
+            <div class="card-body">
+
+                <a href="~/Coach/AddCoach">
+                    <h5 class="one">Add Coach</h5>
+                    <i class="fas fa-user-plus"></i>
+                </a>
+                <a href="~/Coach/ShowCoach">
+                    <h5 class="two">Show Coaches</h5>
+                </a>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-new" style="width: 18rem;">
+            <a href="~/Trainee/TopTrainees">
+                <div class="card-body">
+                    <h5 class="card-title">Top Trainees</h5>
+                    <i class="fas fa-star"></i>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+
+    <div class=" last col-md-3">
+        <div class="card card-new" style="width: 18rem;">
+            <a href="~/Trainee/AddTrainees">
+                <div class="card-body">
+                    <h5 class="card-title">Add Trainee</h5>
+                    <i class="fas fa-user-plus"></i>
+
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+
+    <div class=" last col-md-3">
+        <div class="card card-new" style="width: 18rem;">
+            <a href="~/Report/AddReports">
+                <div class="card-body">
+                    <h5 class="card-title">Add Report</h5>
+                    <i class="fas fa-user-plus"></i>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+    <div class=" last col-md-3">
+        <div class="card card-new" style="width: 18rem;">
+            <a href="~/Admin/AddAdmin">
+                <div class="card-body">
+                    <h5 class="card-title">Add Admin</h5>
+                    <i class="fas fa-user-plus"></i>
+
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <div class=" last col-md-3">
+        <div class="card card-new" style="width: 18rem;">
+            <a href="~/Trainee/AddSlide">
+                <div class="card-body">
+                    <h5 class="card-title">Add Slide</h5>
+                    <i class="fas fa-images"></i>
+
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>

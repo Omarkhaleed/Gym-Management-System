@@ -1,0 +1,78 @@
+﻿@model  IEnumerable<Trainee>
+@{
+    ViewBag.Title = "Show_All_Trainees";
+}
+
+<br />
+@if (Model.Count() == 0)
+{
+    <div class=" danger alert alert-danger col-md-4" role="alert">
+        <h5>Sorry There Is No <strong>Trainees</strong></h5>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class=" mainTable table-dark text-center table-striped table table-bordered">
+            @*<table class="table table-hover table-striped table-bordered">*@
+            <tr>
+            <thead>
+            <th>#@Html.DisplayNameFor(ww => ww.TraineeId)</th>
+            <th>@Html.DisplayNameFor(ww => ww.FirstName) </th>
+            <th>@Html.DisplayNameFor(ww => ww.SecondName) </th>
+            <th>@Html.DisplayNameFor(ww => ww.PhoneNumber)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Gender)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Age)</th>
+            <th>@Html.DisplayNameFor(ww => ww.DateOfRegister)</th>
+
+            <th>@Html.DisplayNameFor(ww => ww.Sport.SportName)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Plan.PlanName)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Coach.FirstName)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Record)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Admin.FirstName)</th>
+
+
+            <th>Mange</th>
+            </thead>
+            </tr>
+            @foreach (var trainee in Model)
+            {
+
+        <tr>
+            <td>@Html.DisplayFor(w => trainee.TraineeId)</td>
+            <td>@Html.DisplayFor(w => trainee.FirstName)</td>
+            <td>@Html.DisplayFor(w => trainee.SecondName)</td>
+            <td>@Html.DisplayFor(w => trainee.PhoneNumber)</td>
+            <td>@Html.DisplayFor(w => trainee.Gender)</td>
+            <td>@Html.DisplayFor(w => trainee.Age)</td>
+            <td>@Html.DisplayFor(w => trainee.DateOfRegister)</td>
+            <td>@Html.DisplayFor(w => trainee.Sport.SportName)</td>
+            <td>@Html.DisplayFor(w => trainee.Plan.PlanName)</td>
+            <td>@Html.DisplayFor(w => trainee.Coach.FirstName)</td>
+            <td>@Html.DisplayFor(w => trainee.Record)</td>
+            <td>@Html.DisplayFor(w => trainee.Admin.FirstName)</td>
+
+
+            <td>
+                <a href="@Url.Action("EditTrainees", "Trainee", new { id = trainee.TraineeId })" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+
+                <a href="@Url.Action("DeleteTrainees", "Trainee", new { id = trainee.TraineeId })" onclick="return confirm('Are You Sure To Delete This Trainee ?')" }) class="btn btn-danger"><i class="fas fa-times"></i> Delete</a>
+            </td>
+        </tr>
+
+            }
+
+        </table>
+    </div>
+}
+
+@*<button style="border-radius: 9px;
+        width: 125px;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -51px;
+    " ;
+        class=" btn btn-outline-primary submit form-group" onclick="window.print()">
+    Print
+</button>*@

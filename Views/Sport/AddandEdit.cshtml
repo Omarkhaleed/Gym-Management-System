@@ -1,0 +1,38 @@
+﻿@model Sport
+@{
+    ViewBag.Title = "AddandEdit";
+}
+    <div class="show-trainee">
+        @using (Html.BeginForm())
+        {
+            if (Model != null)
+            {
+                @Html.HiddenFor(pp => pp.SportId)
+            }
+
+            <div class=" admin">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(pp => pp.SportName, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-sm-10">
+                        @Html.EditorFor(pp => pp.SportName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(pp => pp.SportName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(pp => pp.TotalCoaches, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-sm-10">
+                        @Html.EditorFor(pp => pp.TotalCoaches, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(pp => pp.TotalCoaches, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(pp => pp.TotalTrainees, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-sm-10">
+                        @Html.EditorFor(pp => pp.TotalTrainees, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(pp => pp.TotalTrainees, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <input type="submit" value="Submit" style="margin-left: 241px; margin-top: 18px;" class=" submit btn btn-outline-info  form-group  " />
+            </div>
+        }
+</div>

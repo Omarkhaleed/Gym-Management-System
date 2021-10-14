@@ -1,0 +1,65 @@
+﻿@model Report
+
+@{
+    ViewBag.Title = "PrintReport";
+}
+
+@if (ViewBag.manager == "5")
+{
+    <h1>Monthly Report</h1>
+
+    <div class="table-responsive">
+        <table class=" print mainTable  text-center table table-bordered">
+            @*<table class="table table-hover table-striped table-bordered">*@
+            <thead>
+                <tr>
+                    <th colspan="2">Coach/@Model.Coach.FirstName  @Model.Coach.SecondName</th>
+                </tr>
+                <tr>
+                    <th style="width:50%;">#Items</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody class="Report-body">
+                <tr>
+                    <td>Sport</td>
+                    <td>@Model.Sport.SportName</td>
+                </tr>
+                <tr>
+                    <td>Starting Date</td>
+                    <td>@Model.DateOfStarting</td>
+                </tr>
+                <tr>
+                    <td>Ending Date</td>
+                    <td>@Model.DateOfEnding</td>
+                </tr>
+                <tr>
+                    <td>Cost</td>
+                    <td>@Model.Price</td>
+                </tr>
+                <tr>
+                    <td>Trainees</td>
+                    <td>@Model.Num_Of_Trainees</td>
+                </tr>
+                <tr>
+                    <td>Total Cost</td>
+                    <td>@Model.TotalPrice</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button style="border-radius:9px;
+       width: 125px;
+       margin: auto;" ;
+            class=" btn btn-outline-primary submit form-group" onclick="window.print()">
+        Print
+    </button>
+}
+
+else
+{
+    <div class=" danger alert alert-danger col-md-4" role="alert">
+        <h5>Sorry, only manger can see this !</h5>
+    </div>
+}
+

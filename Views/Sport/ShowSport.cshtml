@@ -1,0 +1,50 @@
+﻿@model  IEnumerable<Sport>
+
+@{
+    ViewBag.Title = "Show_All_Sports";
+}
+<h2>@ViewBag.Title</h2>
+<br />
+<br />
+<div class="table-responsive">
+    <table class=" mainTable  text-center  table-striped  table-dark table table-bordered">
+        @*<table class="table table-hover table-striped table-bordered">*@
+        <tr>
+        <thead>
+       
+        <th>@Html.DisplayNameFor(pp => pp.SportName)</th>
+        <th>@Html.DisplayNameFor(pp => pp.TotalCoaches)</th>
+        <th>@Html.DisplayNameFor(pp => pp.TotalTrainees)</th>
+        <th>Mange</th>
+        </thead>
+        </tr>
+        @foreach (var sport in Model)
+        {
+    <tr>
+
+        <td>@Html.DisplayFor(pp => sport.SportName)</td>
+        @*<td>@Html.DisplayFor(pp => sport.TotalCoaches)</td>*@
+        <td> <a href="@Url.Action("Show_Coaches", "Trainee", new { id = sport.SportId })" style="text-decoration:none;">@Html.DisplayFor(pp => sport.TotalCoaches)</a></td>
+        <td> <a href="@Url.Action("Show_Trainees", "Trainee", new { id = sport.SportId })" style="text-decoration:none;">@Html.DisplayFor(pp => sport.TotalTrainees)</a></td>
+
+        <td>
+            <a href="@Url.Action("EditSport", "Sport", new { id = sport.SportId })" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+
+            <a href="@Url.Action("DeleteSport", "Sport", new { id = sport.SportId})" onclick="return confirm('Are You Sure To Delete This Sport ?')" }) class="btn btn-danger"><i class="fas fa-times"></i> Delete</a>
+        </td>
+    </tr>
+        }
+
+    </table>
+</div>
+
+@*<button style="border-radius: 9px;
+        width: 125px;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -51px;
+    " ;
+        class=" btn btn-outline-primary submit form-group" onclick="window.print()">
+    Print
+</button>*@

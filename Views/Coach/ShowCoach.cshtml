@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Coach>
+@{
+    ViewBag.Title = "Show_All_Coaches";
+}
+<h2>@ViewBag.Title</h2>
+@if (Model.Count() == 0)
+{
+    <div class=" danger alert alert-danger col-md-4" role="alert">
+        <h5>Sorry There Is No <strong>Coaches</strong></h5>
+    </div>
+}
+else
+{
+
+    <div class="table-responsive">
+        <table class=" mainTable  text-center table-striped table-dark table table-bordered">
+            @*<table class="table table-hover table-striped table-bordered">*@
+            <tr>
+            <thead>
+            @*<th>#@Html.DisplayNameFor(pp => pp.CoachId)</th>*@
+            <th>FirstName</th>
+            <th>@Html.DisplayNameFor(pp => pp.SecondName)</th>
+            <th>@Html.DisplayNameFor(pp => pp.Gender)</th>
+            <th>@Html.DisplayNameFor(pp => pp.PhoneNumber)</th>
+            <th>@Html.DisplayNameFor(pp => pp.Sport.SportName)</th>
+            <th>@Html.DisplayNameFor(pp => pp.DateOfStarting)</th>
+            <th>@Html.DisplayNameFor(pp => pp.TotalTrainees)</th>
+            <th>Mange</th>
+            </thead>
+            </tr>
+            @foreach (var coach in Model)
+            {
+                <tr>
+                    @*<td>@Html.DisplayFor(pp => coach.CoachId)</td>*@
+                    <td>@Html.DisplayFor(pp => coach.FirstName)</td>
+                    <td>@Html.DisplayFor(pp => coach.SecondName)</td>
+                    <td>@Html.DisplayFor(pp => coach.Gender)</td>
+                    <td>@Html.DisplayFor(pp => coach.PhoneNumber)</td>
+                    <td>@Html.DisplayFor(pp => coach.Sport.SportName)</td>
+                    <td>@Html.DisplayFor(pp => coach.DateOfStarting)</td>
+                    <td>@Html.DisplayFor(pp => coach.TotalTrainees)</td>
+
+                    <td>
+                        <a href="@Url.Action("EditCoach", "Coach", new { id = coach.CoachId })" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="@Url.Action("DeleteCoach", "Coach", new { id = coach.CoachId })" onclick="return confirm('Are You Sure To Delete This Coach ?')" }) class="btn btn-danger"><i class="fas fa-times"></i> Delete</a>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+}
+
+@*<button style="border-radius:9px;
+       width: 125px;
+       margin: auto;" ;
+        class=" btn btn-outline-primary submit form-group" onclick="window.print()">
+    Print
+</button>*@

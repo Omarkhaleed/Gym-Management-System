@@ -1,0 +1,69 @@
+﻿@model Coach
+@{
+    ViewBag.Title = "AddandEdit";
+}
+
+
+<div class="show-trainee">
+    @using (Html.BeginForm())
+    {
+        if (Model != null)
+        {
+            @Html.HiddenFor(pp => pp.CoachId)
+        }
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(pp => pp.FirstName, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                @Html.EditorFor(pp => pp.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(pp => pp.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(pp => pp.SecondName, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                @Html.EditorFor(pp => pp.SecondName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(pp => pp.SecondName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(pp => pp.Gender, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                <span style="color: #fcd307;">Male</span>@Html.RadioButtonFor(m => m.Gender, "Male")
+                <span style="color: #fcd307;">Female</span>@Html.RadioButtonFor(m => m.Gender, "Female")
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(pp => pp.PhoneNumber, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                @Html.EditorFor(pp => pp.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(pp => pp.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(ww => ww.SportId, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                @Html.DropDownListFor(pp => pp.SportId, ViewBag.sport as SelectList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(pp => pp.SportId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(pp => pp.DateOfStarting, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                @Html.EditorFor(pp => pp.DateOfStarting, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(pp => pp.DateOfStarting, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group col-md-6">
+            @Html.LabelFor(pp => pp.TotalTrainees, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                @Html.EditorFor(pp => pp.TotalTrainees, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(pp => pp.TotalTrainees, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <input type="submit" value="submit" class="  btn btn-outline-info submit  form-group" />
+    </div>
+    }
+</div>

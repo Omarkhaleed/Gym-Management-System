@@ -1,0 +1,131 @@
+﻿@model IEnumerable<OlympicGym.Models.Trainee>
+@{
+    ViewBag.Title = "Attend_Trainee";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form class="form" action="~/Trainee/FindTrainees" method="get">
+    <input class="  form-control my-2 my-sm-0" type="search" name="ID" />
+    <input class="submit  btn btn-outline-info" type="submit" value="Search">
+</form>
+<form class="form" action="~/Trainee/FindTrainees2" method="get">
+    <input class="  form-control my-2 my-sm-0" type="search" name="phone" placeholder="phone...." />
+    <input class="submit  btn btn-outline-info" type="submit" value="Search">
+</form>
+@if (Model.Count() == 0)
+{
+    <div class=" danger alert alert-danger col-md-4" role="alert">
+        <h5>Sorry There Is No <strong>Trainee</strong> Has This ID</h5>
+    </div>
+}
+else
+{
+
+    <div class="table-responsive">
+        <table class=" mainTable table-dark text-center table-striped table table-bordered">
+            @*<table class="table table-hover table-striped table-bordered">*@
+            <tr>
+            <thead>
+            <th>#@Html.DisplayNameFor(ww => ww.TraineeId)</th>
+            <th>@Html.DisplayNameFor(ww => ww.FirstName) </th>
+            <th>@Html.DisplayNameFor(ww => ww.SecondName) </th>
+            @*<th>@Html.DisplayNameFor(ww => ww.PhoneNumber)</th>*@
+            <th>@Html.DisplayNameFor(ww => ww.DateOfRegister)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Sport.SportName)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Plan.PlanName)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Coach.FirstName)</th>
+            <th>@Html.DisplayNameFor(ww => ww.classes)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Record)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Admin.FirstName)</th>
+
+            <th>Mange</th>
+            </thead>
+            </tr>
+            @foreach (var trainee in Model)
+            {
+                if (trainee.classes == 0)
+                {
+                    <div class=" danger alert alert-danger col-md-4" role="alert">
+                        <h5>Sorry the Duration finished,Click <span>Renew</span> to Renew</h5>
+                    </div>
+                }
+
+                <tr>
+                    <td>@Html.DisplayFor(w => trainee.TraineeId)</td>
+                    <td>@Html.DisplayFor(w => trainee.FirstName)</td>
+                    <td>@Html.DisplayFor(w => trainee.SecondName)</td>
+                    @*<td>@Html.DisplayFor(w => trainee.PhoneNumber)</td>*@
+
+
+                    <td>@Html.DisplayFor(w => trainee.DateOfRegister)</td>
+                    <td>@Html.DisplayFor(w => trainee.Sport.SportName)</td>
+                    <td>@Html.DisplayFor(w => trainee.Plan.PlanName)</td>
+                    <td>@Html.DisplayFor(w => trainee.Coach.FirstName)</td>
+                    <td>@Html.DisplayFor(w => trainee.classes)</td>
+                    <td>@Html.DisplayFor(w => trainee.Record)</td>
+                    <td>@Html.DisplayFor(w => trainee.Admin.FirstName)</td>
+                    <td>
+                        <a href="@Url.Action("EditTrainees", "Trainee", new { id = trainee.TraineeId })" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+
+                        <a href="@Url.Action("DeleteTrainees", "Trainee", new { id = trainee.TraineeId })" onclick="return confirm('Are You Sure To Delete This Trainee ?')" }) class="btn btn-danger"><i class="fas fa-times"></i> Delete</a>
+
+                        @if (trainee.classes == 0)
+                        {
+                            <a href="@Url.Action("RenewTrainees", "Trainee", new { id = trainee.TraineeId })" onclick="return confirm('Are You Sure To Renew This Trainee ?')" }) class="btn btn-info"><i class="fas fa-check"></i> Renew</a>
+
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("AttendTrainees", "Trainee", new { id = trainee.TraineeId })" onclick="return confirm('Are You Sure To Attend This Trainee ?')" }) class="btn btn-info"><i class="fas fa-check"></i> Attend</a>
+
+                        }
+                        <a href="@Url.Action("BonusTrainees", "Trainee", new { id = trainee.TraineeId })" class="btn btn-primary"><i class="fas fa-plus"></i> Bonus</a>
+
+                    </td>
+                </tr>
+            }
+        </table>
+           
+    </div>
+
+
+}
+
+
+
+
+
+
+
+
+
+            @*the old used but @Html action link doesn't provide anything not flexible*@
+
+            @*@Html.ActionLink("Edit", "EditTrainees", "Trainee", new { id = trainee.TraineeId }, new { @class = "btn btn-success " })*@
+
+            @*@Html.ActionLink("Delete", "DeleteTrainees", "Trainee", new { id = trainee.TraineeId }, new
+                {
+                    @class = "  btn btn-danger",
+                    onclick = $"return confirm('Are You Sure To Delete  {trainee.FirstName}')"
+                })*@
+
+            @*@Html.ActionLink("Renew", "RenewTrainees", "Trainee", new { id = trainee.TraineeId }, new
+                  {
+                      @class = "btn btn-info",
+                      onclick = $"return confirm('Are You Sure To Renew  {trainee.FirstName}')"
+                  })
+                        }
+                        @Html.ActionLink("Attend", "AttendTrainees", "Trainee", new { id = trainee.TraineeId }, new
+                                        {
+                                            @class = "btn btn-info",
+                                            onclick = $"return confirm('Are You Sure To Attend  {trainee.FirstName}')"
+                                        })
+                        }
+
+
+                        }
+                        @Html.ActionLink("Bonus", "BonusTrainees", "Trainee", new
+                                   {
+                                       id = trainee.TraineeId
+                }, new { @class = "btn btn-primary  " })*@
