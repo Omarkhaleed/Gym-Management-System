@@ -1,0 +1,283 @@
+/* ////// CSS Style File For All Pages ////// */
+.asterisk {
+    font-size: 30px;
+    color: #0164bb;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;  
+    height: 788px;
+    background-image: url("../images/Best-33--.jpg");
+    background-size: contain;
+    background-size:1278px 807px;
+}
+
+/* start NavBar */
+
+.bg-primary {
+    background-color: #151515 !important;
+}
+.collapse a {
+    color: #fff !important;
+    font-weight:bold;
+}
+    .collapse a:hover {
+        color: #870000 !important;
+    }
+
+/* End NavBar */
+
+
+/* Start Index Page */
+
+.card-new {
+    width: 18rem;
+    height: 105px;
+    border-radius: 18px;
+    padding: 15px;
+    /*  blue light 
+    background: #000046;  fallback for old browsers 
+    background: -webkit-linear-gradient(to right, #000046,#1CB5E0);  Chrome 10-25, Safari 5.1-6 
+    background: linear-gradient(to right,#000046,#1CB5E0);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*    background: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%);*/
+    background-image: linear-gradient(to right, #870000 0%, #190A05 55%, #870000 100%);
+
+}
+
+.card-new a {
+        color: #fff;
+        text-decoration: none;
+}
+
+    .card-new a:hover {
+        color: #fcd307 !important;
+    }
+
+.card-new a h5 {
+     position: absolute;
+     right: 36px;
+     top: 9px;
+     font-weight: bold;
+
+}
+
+.card-new a svg {
+    position: absolute;
+    left: 23px;
+    font-size: 55px;
+
+}
+
+.card-new a span {
+    right: 85px;
+    position: absolute;
+    top: 31px;
+    font-size: 38px;
+    font-weight: bold;
+
+}
+
+.Add {
+   /* margin-left: 44px;*/
+    margin-top: 25px;
+}
+
+
+.Add .card-title {
+    top: 40%;
+}
+
+.Add .card-body svg {
+    position: absolute;
+    top: 17%;
+}
+
+.Add .card-body .card-title {
+    font-size: 23px;
+    top: 35px;
+    right: 33px
+}
+
+.Add .card-body .two {
+    position: absolute;    
+    top: 54px;
+    right: 24px;
+    font-size: 24px;
+}
+
+.Add .card-body .one {
+    position: absolute;
+    top: 21px;
+    right: 38px;
+    font-size: 24px;
+}
+
+.svg-show a svg {
+    position: absolute;
+    font-size: 58px;
+    left: 14px;
+    top: 17px;
+}
+
+.svg-show .card-title {
+    right: 13px;
+}
+
+.last {
+    margin-top: 25px;
+}
+
+/* End  Index Page */
+
+
+/*  Start Tables */
+
+.table-responsive {
+    position: relative;
+    max-height: 500px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.table-responsive .print {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px
+}
+
+.mainTable th {
+    position: sticky;
+    top: 0;
+}
+
+.mainTable tr th {
+    background-color: #151515 !important;
+    color: #fcd307;
+}
+
+/*  End Tables */
+
+
+h2 {
+    font-family: Georgia, sans-serif !important;
+    position: absolute;
+    top: 85px;
+    left: -35px;
+    text-align: center;
+    color: #fcd307; /* fallback for old browsers */
+    font-weight: bold;
+    font-size: 39px;
+}
+h1 {
+    font-family: Georgia, sans-serif !important;
+    position: absolute;
+    left: 38%;
+    top: 122px;
+    color: #fcd307;
+    font-weight: bold;
+    font-size:39px;
+}
+
+
+
+/*  Start Forms in All Pages */
+
+.form {  
+   text-align: center;
+   margin-bottom: 25px;
+
+}
+
+.form-control {
+   background-color: #fff;
+   width: 400px;
+   display: inline;
+   margin-right: 7px;
+
+}
+
+.show-trainee {
+   position: absolute;
+   width: 847px;
+   left: 22%;
+   border: 3px groove #1000ff;
+   border-radius: 9px;
+   padding: 13px;
+   background-color: #151515;
+
+}
+
+.show-trainee .submit {
+   height: 41px;
+   width: 300px;
+   position: inherit;
+   margin-left: 75px;
+   margin-right: 7px;
+   margin-top: 31px;    
+   border-radius: 19px;
+
+}
+
+.show-trainee submit2 {
+   position: absolute;
+}
+
+.show-trainee .plan .form-group {
+   margin: auto;
+
+}
+
+.show-trainee .admin .form-group {
+   margin: auto;
+
+}
+
+.col-form-label {
+   color: #fcd307;  
+   font-size: 17px;
+
+}
+
+/*  End Forms in All Pages */
+
+
+/* Different Elements*/
+
+.image {
+   width: 867px;
+   position: absolute;
+   height: 261px;
+   left: 21%;
+   top: 52%;
+   margin-top: 43px;
+   border-radius: 19px;
+
+}
+
+.danger {
+   text-align: center;
+   position: initial;
+   margin-left: 391px;
+   border-left: 7px solid #842029;
+   width: 488px;
+}
+/* Different Elements*/
+
+
+/* Start Print Report Page*/
+
+.Report-body {
+   background-color: white;
+    
+}
+.Report-body td:first-child {
+   font-weight: bold;
+   font-size: 17px;
+   color: #000000;
+}
+
+/* End Print Report Page*/
