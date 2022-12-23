@@ -26,6 +26,8 @@
 
 
 ## Features
+-The main objective of the project is to develop software that facilitates thedata storage, data maintenance and its retrieval for the gym in an igneous way
+-To store the record of the customers, the staff that has the privileges toaccess, modify and delete any record and finally the service, gym provides toits customers
 - Manage all trainees business
 - Manage all trainers business
 - Crud Operations on all entities such : edit plan or add new plan 
