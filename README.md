@@ -2,6 +2,7 @@
 > A Pro Gym is gym management system  which is basically software that is designed to seamlessly integrate all aspects of your business, allowing you to more easily and efficiently run your facility..
 > Video demo [_here_](https://drive.google.com/file/d/1-S_tQF2ukU6UFf2bhzivEAkU_ZEhGxqR/view?usp=share_link).
 
+
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
@@ -10,12 +11,11 @@
 * [Project Status](#project-status)
 
 
-
 ## General Information
 - It is a system to manage and track your trainees,trainers and their plans and sports
 - It provides to you membership management
 - Check-in and visit tracking through number of classes to each trainee
-- manage and make weekly or monthly report
+- Manage and make weekly or monthly report
 
 
 
@@ -26,14 +26,14 @@
 
 
 ## Features
-List the ready features here:
 - Manage all trainees business
 - Manage all trainers business
 - Crud Operations on all entities such : edit plan or add new plan 
 - Dynamic business to trainers to put their plans and sports
 
+
 ## Screenshots
-![Example screenshot](./img/screenshot(527).png)
+![Example screenshot](./img/Screenshot(527).png)
 
 
 ## Project Status
