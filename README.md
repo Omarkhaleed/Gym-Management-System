@@ -1,5 +1,5 @@
 
-# Gymnasium-System
+# Gym Management System
 
 This Is a Big Gymnasium System which can manage all Trainees , Coaches , Sports , Plans and Reports.
 
