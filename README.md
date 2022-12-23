@@ -1,5 +1,5 @@
 # Gym-Management-System
-> A Pro Gym is gym management system  which is basically software that is designed to seamlessly integrate all aspects of your business, allowing you to more easily and efficiently run your facility..
+> An Olympic Gym is gym management system  which is basically software that is designed to seamlessly integrate all aspects of your business, allowing you to more easily and efficiently run your facility..
 > Video demo [_here_](https://drive.google.com/file/d/1-S_tQF2ukU6UFf2bhzivEAkU_ZEhGxqR/view?usp=share_link).
 
 
