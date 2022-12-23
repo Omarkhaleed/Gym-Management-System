@@ -33,7 +33,7 @@
 
 
 ## Screenshots
-![Example screenshot](./img/Screenshot (527).png)
+![Example screenshot](./img/screenshot.png)
 
 
 ## Project Status
