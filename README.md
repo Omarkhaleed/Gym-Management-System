@@ -35,7 +35,7 @@
 
 
 ## Screenshots
-![Example screenshot](./images/screen.png)
+![Example screenshot](./images/Screen-Capture-1.m4v)
 
 
 ## Project Status
